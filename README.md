@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# فروشگاه اینترنتی React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+یک پلتفرم تجارت الکترونیک کامل توسعه داده شده با React.js و TypeScript.
 
-Currently, two official plugins are available:
+## ویژگی‌های اصلی
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- مدیریت کامل سبد خرید
+- سیستم احراز هویت و Routeهای محافظت شده
+- طراحی ریسپانسیو با Tailwind CSS
+- مدیریت state با Context API
+- توسعه یافته با TypeScript
 
-## Expanding the ESLint configuration
+## تکنولوژی‌ها
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 
+- TypeScript
+- Tailwind CSS
+- React Router 
+- Context API
+- Axios
+- Vite
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## چالش ها
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- سازگاری ابعاد عکس ثابت 
+- حذف شدن اخرین محصول با زدن ریمو محصول اول در سبد خرید که با گذاشتن key حل شد 
+- استفاده از فریمر موشن
+- استفاده از جنریک تایپ ها 
+- اشنایی به استفاده از متود های مناسب برای بهینه سازی کد ها 
+- استفاده از کاستوم هوک ها و پرو استیت برای بهینه تر کردن کد ها 
+- ریسپانسیو کردن سایت برای اندازه های مختلف 
+- ناسازگاری کانتینر در برخی ابعاد و اعمال نشدن ان 
+و...... 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### راهنمای اجرای پروژه
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### پیش‌نیازها:
+- Node.js (نسخه ۱۸ یا بالاتر)
+- npm یا yarn
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### مراحل اجرا:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **کلون کردن ریپازیتوری:**
+```bash
+git clone https://github.com/Faridyazdani7/react-ecommerce-store.git
+cd react-ecommerce-store
+
+2. npm install
+
+3. npx json-server data/db.json -p 8001
+4.اجرای پروژه ری‌اکت (ترمینال دوم)
+npm run dev
+
+##### در صورت کار نکردن کامل نصب این دورا هم امتحان کنید npm install axios framer-motion

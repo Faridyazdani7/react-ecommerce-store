@@ -11,12 +11,19 @@ import axios from "axios";
     discount: "",
   });
 
+  const [loading,setLoading]=useState(false)
+
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleCreateProduct = async () => {
+
+    if(loading) return;
+    setLoading(true);
+
     await axios.post("http://localhost:8001/products", {
       id: Date.now().toString(),
       ...product,
@@ -25,6 +32,7 @@ import axios from "axios";
       discount: Number(product.discount) || "",
       rating: { rate: 0, count: 0 },
     });
+    setLoading(false);
     alert("محصول با موفقیت ایجاد شد");
   };
 
@@ -59,7 +67,7 @@ import axios from "axios";
         </div>
         {/* دکمه ایجاد محصول */}
         <button onClick={handleCreateProduct} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">
-          ایجاد محصول
+          {loading ? "در حال ایجاد..." : "ایجاد محصول"}
         </button>
       </div>
     </div>
